@@ -1,10 +1,12 @@
 <h2> News List</h2>
-<div *ngFor="let news of newsList" class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{news.immagine}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{news.titolo}}</h5>
-    <p class="card-text">{{news.articolo}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="card-group">
+  <div *ngFor="let news of newsList" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{news.immagine}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{news.titolo}}</h5>
+      <p class="card-text">{{news.articolo}}</p>
+      <button (click)="updateNews(news.idNotizia)" class="btn btn-primary">Edit</button>
+      <button (click)="deleteNews(news.idNotizia)" class="btn btn-danger">Delete</button>
+    </div>
   </div>
 </div>
-
